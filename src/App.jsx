@@ -19,7 +19,7 @@ const App = () => {
       .catch((error) => console.error("Error fetching rates:", error));
   }, [fromCurrency, toCurrency, amount]);
   return (
-    <div className="bg-zinc-800 text-white flex justify-center items-center min-h-screen p-4 sm:p-10">
+    <div className="bg-zinc-900 text-white flex justify-center items-center min-h-screen p-4 sm:p-10">
       <div className="bg-zinc-700 p-6 sm:p-10 rounded-lg shadow-lg shadow-zinc-600/50 w-full max-w-md sm:max-w-lg">
         <h1 className="text-xl sm:text-2xl font-bold">Currency Converter</h1>
         <input
