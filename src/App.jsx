@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 
 const App = () => {
@@ -20,21 +19,20 @@ const App = () => {
       .catch((error) => console.error("Error fetching rates:", error));
   }, [fromCurrency, toCurrency, amount]);
   return (
-    <div className="bg-zinc-800 text-white flex justify-center items-center h-screen p-10 ">
-      <div className=" bg-zinc-700 p-10 rounded-lg shadow-lg shadow-zinc-600/50">
-        <h1 className="text-2xl font-bold ">Currency Converter</h1>
+    <div className="bg-zinc-800 text-white flex justify-center items-center min-h-screen p-4 sm:p-10">
+      <div className="bg-zinc-700 p-6 sm:p-10 rounded-lg shadow-lg shadow-zinc-600/50 w-full max-w-md sm:max-w-lg">
+        <h1 className="text-xl sm:text-2xl font-bold">Currency Converter</h1>
         <input
-    
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
           className="bg-zinc-600 p-2 rounded-lg w-full mt-4 border border-zinc-100"
           placeholder="Enter amount"
         />
-        <div className="flex space-x-2 mb-3 mt-2.5 text-amber-50">
-          <select 
+        <div className="flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0 mb-3 mt-2.5 text-amber-50">
+          <select
             value={fromCurrency}
             onChange={(e) => setFromCurrency(e.target.value)}
-            className="flex-1 p-2 border rounded bg-zinc-600"
+            className="w-full sm:flex-1 p-2 border rounded bg-zinc-600"
           >
             <option value="USD">USD - US Dollar</option>
             <option value="EUR">EUR - Euro</option>
@@ -44,10 +42,10 @@ const App = () => {
             <option value="INR">INR - Indian Rupee</option>
             <option value="AUD">AUD - Australian Dollar</option>
           </select>
-          <select 
+          <select
             value={toCurrency}
             onChange={(e) => setToCurrency(e.target.value)}
-            className="flex-1 p-2 border rounded bg-zinc-600"
+            className="w-full sm:flex-1 p-2 border rounded bg-zinc-600"
           >
             <option value="PKR">PKR - Pakistani Rupee</option>
             <option value="USD">USD - US Dollar</option>
@@ -58,9 +56,11 @@ const App = () => {
             <option value="AUD">AUD - Australian Dollar</option>
           </select>
         </div>
-        <div className="mt-4 text-center text-3xl font-bold">
+        <div className="mt-4 text-center text-2xl sm:text-3xl font-bold">
           {result && (
-            <p>{amount} {fromCurrency} = {result} {toCurrency}</p>
+            <p>
+              {amount} {fromCurrency} = {result} {toCurrency}
+            </p>
           )}
         </div>
       </div>
